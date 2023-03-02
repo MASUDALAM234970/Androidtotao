@@ -1,0 +1,71 @@
+package com.example.test20;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    private CheckBox checkBoxmilk, checkBoxsugar, checkBoxwater,checkBoxtea, checkBoxsweet;
+    private Button Showbutton;
+    private TextView resulttextView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        checkBoxmilk=findViewById(R.id.milkId);
+        checkBoxsugar=findViewById(R.id.sugarId);
+        checkBoxwater=findViewById(R.id.WaterId);
+        checkBoxtea=findViewById(R.id.TeaId);
+          checkBoxsweet=findViewById(R.id.SweetId);
+          resulttextView=findViewById(R.id.Resultextview);
+          Showbutton=findViewById(R.id.button);
+
+        Showbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringBuilder stringBuilder= new StringBuilder();
+                if (checkBoxmilk.isChecked())
+                {
+                    String value =checkBoxmilk.getText().toString();
+                    stringBuilder.append(value+" is ordered "+"\n");
+
+                }
+                if (checkBoxsugar.isChecked())
+                {
+                    String value =checkBoxsugar.getText().toString();
+                    stringBuilder.append(value+" is ordered "+"\n");
+
+                }
+                if ( checkBoxwater.isChecked())
+                {
+                    String value =checkBoxwater.getText().toString();
+                    stringBuilder.append(value+" is ordered "+"\n");
+
+                }
+                if (checkBoxtea.isChecked())
+                {
+                    String value =checkBoxtea.getText().toString();
+                    stringBuilder.append(value+" is ordered "+"\n");
+
+                }
+                if ( checkBoxsweet.isChecked())
+                {
+                    String value = checkBoxsweet.getText().toString();
+                    stringBuilder.append(value+" is ordered "+"\n");
+
+                }
+            resulttextView.setText(stringBuilder);
+
+
+            }
+
+        });
+
+    }
+}
