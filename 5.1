@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:background="#20fff2"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_margin="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:text="Please select your Sex"
+        />
+
+         <RadioGroup
+
+             android:id="@+id/redioGrouId"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
+             <RadioButton
+                 android:id="@+id/radiobuttonmaleId"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                   android:text="Male"
+                 android:layout_margin="15dp"
+                 android:textSize="20sp"/>
+
+             <RadioButton
+                 android:id="@+id/radiobuttonfemaleId"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Female"
+                 android:layout_margin="15dp"
+                 android:textSize="20sp"/>
+
+         </RadioGroup>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show"
+        android:layout_margin="15dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/Resultextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        />
+
+</LinearLayout>
