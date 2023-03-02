@@ -45,35 +45,52 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
 
     @Override
     public void onClick(View view) {
-     String number1=editText1.getText().toString();
-     String number2=editText2.getText().toString();
+    try {
+        String number1=editText1.getText().toString();
+        String number2=editText2.getText().toString();
 
-     //converting into double
-          double num1=Double.parseDouble(number1);
-          double num2=Double.parseDouble(number2) ;
+        //converting into double
+        double num1=Double.parseDouble(number1);
+        double num2=Double.parseDouble(number2) ;
 
-      if (view.getId()==R.id.button3)
-      {
-            double sum= num1+num2;
-          Toast.makeText(MainActivity.this," MASUD ALAM : "+sum,Toast.LENGTH_LONG).show();
-      }
-         else   if (view.getId()==R.id.button4)
+        if (view.getId()==R.id.button3)
         {
-              double sum= num1-num2;
-              Toast.makeText(MainActivity.this,"Moni :"+sum,Toast.LENGTH_LONG).show();
+            double sum= num1+num2;
+            Toast.makeText(MainActivity.this," MASUD ALAM : "+sum,Toast.LENGTH_LONG).show();
         }
-      else   if (view.getId()==R.id.button5)
-      {
-          double sum= num1*num2;
-          Toast.makeText(MainActivity.this,"Monika :"+sum,Toast.LENGTH_LONG).show();
-      }
-      else   if (view.getId()==R.id.button6)
-      {
-          double sum= num1/num2;
-          Toast.makeText(MainActivity.this,"OISHEE :"+sum,Toast.LENGTH_LONG).show();
-      }
+        else   if (view.getId()==R.id.button4)
+        {
+            double sum= num1-num2;
+            Toast.makeText(MainActivity.this,"Moni :"+sum,Toast.LENGTH_LONG).show();
+        }
+        else   if (view.getId()==R.id.button5)
+        {
+            double sum= num1*num2;
+            Toast.makeText(MainActivity.this,"Monika :"+sum,Toast.LENGTH_LONG).show();
+        }
+        else   if (view.getId()==R.id.button6)
+        {
+            double sum= num1/num2;
+            Toast.makeText(MainActivity.this,"OISHEE :"+sum,Toast.LENGTH_LONG).show();
+        }
+
+
+    } catch (Exception e)
+    {
+       Toast.makeText(MainActivity.this,"Please Enter Number ",Toast.LENGTH_LONG).show();
+
+    }
+
+
+
     }
 }
+
+
+
+
+
+
 
 
 
