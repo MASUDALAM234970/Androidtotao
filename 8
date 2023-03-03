@@ -1,0 +1,49 @@
+package com.example.a13;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+
+     private TextView textView;
+    private Switch aSwitch;
+
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        aSwitch=findViewById(R.id.switch2);
+
+        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b)
+                {
+                   Toast.makeText(MainActivity.this,"MASUD\n"+" ON",Toast.LENGTH_LONG).show();
+                }
+                else {
+
+                    Toast.makeText(MainActivity.this,"MONIKA\n"+"OFF",Toast.LENGTH_LONG).show();
+
+                }
+
+
+            }
+
+        });
+    }
+
+
+}
