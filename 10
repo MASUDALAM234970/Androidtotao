@@ -1,0 +1,62 @@
+package com.example.a13;
+
+import androidx.activity.OnBackPressedDispatcherOwner;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.DatePicker;
+import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+
+private DatePicker datePicker;
+private  TextView textView;
+private Button button;
+
+
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        textView=findViewById(R.id.textView);
+        button=findViewById(R.id.button);
+        datePicker=findViewById(R.id.DataepickerId);
+       textView.setText(currentDate());
+
+       button.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               textView.setText(currentDate());
+           }
+       });
+    }
+
+    String currentDate ()
+    {
+       StringBuilder stringBuilder= new StringBuilder();
+       stringBuilder.append("Current Date "+"\n");
+       stringBuilder.append(datePicker.getDayOfMonth()+" ");
+       stringBuilder.append((datePicker.getMonth()+1)+" ");
+       stringBuilder.append(datePicker.getYear()+" ");
+
+       return stringBuilder.toString();
+
+    }
+
+
+     }
+
