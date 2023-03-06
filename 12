@@ -1,0 +1,52 @@
+package com.example.a13;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    private TextView textView, textView1, textView2;
+    private Typeface typeface, typeface1, typeface2;
+    @Override
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        textView=findViewById(R.id.textViewId);
+        textView1=findViewById(R.id.textView1Id);
+        textView2=findViewById(R.id.textView2Id);
+     // typeface=Typeface.createFromAsset(getAssets(),"front/alam.ttf");
+
+     // textView.setTypeface(typeface);
+     // textView1.setTypeface(typeface);
+     // textView2.setTypeface(typeface);
+
+          // typeface1=Typeface.createFromAsset(getAssets(),"front/monika.otf");
+
+
+       // textView.setTypeface(typeface1);
+       // textView1.setTypeface(typeface1);
+       // textView2.setTypeface(typeface1);
+
+        typeface2=Typeface.createFromAsset(getAssets(),"front/muna.otf");
+
+
+        textView.setTypeface(typeface2);
+        textView1.setTypeface(typeface2);
+        textView2.setTypeface(typeface2);
+
+
+
+    }
+
+
+            // tumi protome app jaba then STC jaba Main giya assets file create korta the folder
+              //paste korba okey
+
+}
+
+
