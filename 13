@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:weightSum="6"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <Button
+       android:layout_weight="2"
+       android:layout_height="0dp"
+       android:id="@+id/buttonId1"
+       android:layout_margin="15dp"
+       android:layout_width="match_parent"
+
+       android:text="Button1"
+       style="@style/Widget.AppCompat.Button.Colored"
+                                    />
+   <Button
+       android:layout_weight="1"
+       android:layout_height="0dp"
+       android:id="@+id/buttonId2"
+       android:layout_width="match_parent"
+
+       android:layout_margin="15dp"
+       style="@style/Widget.AppCompat.Button.Colored"
+       android:text="Button2"
+       />
+   <Button
+       android:layout_weight="1"
+       android:layout_height="0dp"
+       android:id="@+id/buttonId3"
+       android:layout_width="match_parent"
+       android:layout_margin="15dp"
+       style="@style/Widget.AppCompat.Button.Colored"
+
+       android:text="Button3"
+       />
+   <Button
+       android:layout_weight="1"
+       android:layout_height="0dp"
+       android:id="@+id/buttonId4"
+       android:layout_width="match_parent"
+       android:layout_margin="15dp"
+       style="@style/Widget.AppCompat.Button.Colored"
+
+       android:text="Button4"
+       />
+   <Button
+       android:layout_weight="1"
+       android:layout_height="0dp"
+       android:id="@+id/buttonId5"
+       android:layout_width="match_parent"
+       android:layout_margin="15dp"
+       style="@style/Widget.AppCompat.Button.Colored"
+
+       android:text="Button5"
+       />
+
+</LinearLayout>
