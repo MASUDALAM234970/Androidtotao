@@ -1,0 +1,28 @@
+package com.example.a13;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.net.Uri;
+import android.os.Bundle;
+import android.widget.MediaController;
+import android.widget.VideoView;
+
+public class MainActivity extends AppCompatActivity {
+
+    private VideoView videoView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        videoView=findViewById(R.id.videoId);
+
+        Uri uri= Uri.parse("android.resource://"+getPackageName() +"/"+R.raw.kotita);
+        videoView.setVideoURI(uri);
+        MediaController mediaController=new MediaController(this);
+        videoView.setMediaController(mediaController);
+        videoView.start();
+    }
+}
+
+/// resource file ar directory  te giya akta raw name file banate hobe then  okay
