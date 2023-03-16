@@ -1,0 +1,330 @@
+
+
+package com.example.mycountryprofilephotos;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity  implements View.OnClickListener {
+
+    private Button bangladesh, india, pakistan;
+    private Intent intent;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        bangladesh=findViewById(R.id.Bangladesh_buttonId);
+        india=findViewById(R.id.india_buttonId);
+        pakistan=findViewById(R.id.pakistan_buttonId);
+
+        bangladesh.setOnClickListener(this);
+        india.setOnClickListener(this);
+        pakistan.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+
+      if(view.getId()==R.id.Bangladesh_buttonId){
+
+         intent= new Intent(MainActivity.this,ProfileActivity.class);
+         intent.putExtra("name","Bangladesh");
+         startActivity(intent);
+
+      } if(view.getId()==R.id.india_buttonId){
+
+         intent= new Intent(MainActivity.this,ProfileActivity.class);
+         intent.putExtra("name","India");
+         startActivity(intent);
+
+      } if(view.getId()==R.id.pakistan_buttonId){
+
+         intent= new Intent(MainActivity.this,ProfileActivity.class);
+         intent.putExtra("name","Pakistan");
+         startActivity(intent);
+
+      }
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder Monika =new AlertDialog.Builder(MainActivity.this);
+        Monika.setIcon(R.drawable.quetion);
+        Monika.setTitle("This is a title");
+        Monika.setMessage("Do you exit ");
+        Monika.setCancelable(false);
+
+        Monika.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+                Toast.makeText(MainActivity.this,"You exit aps ",Toast.LENGTH_LONG ).show();
+            }
+        });
+
+
+        Monika.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                dialogInterface.cancel();
+                Toast.makeText(MainActivity.this,"Stil now same page",Toast.LENGTH_LONG ).show();
+            }
+        });
+
+        AlertDialog alertDialog=Monika.create();
+        alertDialog.show();
+
+    }
+}
+
+
+
+
+/// Second Activity.JAVA
+
+
+package com.example.mycountryprofilephotos;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class ProfileActivity extends AppCompatActivity {
+  private ImageView imageView;
+  private TextView textView;
+  private Bundle bundle;
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_profile);
+
+        imageView=findViewById(R.id.bdId);
+       textView=findViewById(R.id.textviewprofileId);
+
+        Bundle bundle=getIntent().getExtras();
+        if(bundle!=null){
+
+
+            String CountryName =bundle.getString("name");
+            showDetails(CountryName);
+        }
+
+
+
+    }
+
+void showDetails(String CountryName){
+
+   if(CountryName.equals("Bangladesh")){
+
+  imageView.setImageResource(R.drawable.bd2);
+     textView.setText(R.string.Bangladesh_txt);
+
+   }if(CountryName.equals("India")){
+
+  imageView.setImageResource(R.drawable.india2);
+
+  textView.setText(R.string.Bangladesh3_txt);
+
+   }
+   if(CountryName.equals("Pakistan")){
+
+  imageView.setImageResource(R.drawable.pakistan2);
+
+textView.setText(R.string.Bangladesh2_txt);
+
+   }
+
+    }
+
+
+
+}
+
+
+////main Xml file
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#148e73"
+    tools:context=".MainActivity">
+
+<DigitalClock
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="50sp"
+    android:textStyle="italic"
+    android:layout_marginBottom="15dp"
+
+    />
+
+<Button
+    android:id="@+id/Bangladesh_buttonId"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/Bangladesh_button"
+    android:textSize="20sp"
+    android:drawableLeft="@drawable/bd"
+    android:textStyle="bold"
+    style="@style/Widget.AppCompat.Button.Colored"
+
+    />
+<Button
+    android:id="@+id/india_buttonId"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/India_button"
+    android:textSize="20sp"
+    android:drawableLeft="@drawable/india"
+    style="@style/Widget.AppCompat.Button.Colored"
+    android:textStyle="bold"
+
+    />
+<Button
+    android:id="@+id/pakistan_buttonId"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/Pakistan_button"
+    android:textSize="20sp"
+    android:drawableLeft="@drawable/pakistan"
+    style="@style/Widget.AppCompat.Button.Colored"
+    android:textStyle="bold"
+
+    />
+
+</LinearLayout>
+
+
+Profile xml file
+
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#00BCD4"
+    tools:context=".ProfileActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+
+
+        <ImageView
+            android:id="@+id/bdId"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            />
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/textviewprofileId"
+            android:textStyle="bold"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+
+            />
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+String part 
+
+<resources>
+    <string name="app_name">MyCountryProfile</string>
+    <string name="Bangladesh_button">Bangladesh </string>
+    <string name="India_button">India </string>
+    <string name="Pakistan_button"> Pakistan</string>
+    <string name="Bangladesh_txt">
+         Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways.
+        Its Padma (Ganges), Meghna and Jamuna rivers create fertile plains, and travel by boat is common. On the southern coast,
+        the Sundarbans, an enormous mangrove forest shared with Eastern India,
+        is home to the royal Bengal tiger. ― Google
+        Capital: Dhaka
+        Dialing code: +880
+        Population: 169.4 million (2021) World Bank
+        Currency: Bangladeshi Taka
+        Prime minister: Sheikh Hasina
+        Official language: Bengali
+
+    </string>
+
+    <string name="pakistan_txt">
+
+
+
+
+
+    </string>
+
+
+    <style name="id_text">
+
+    </style>
+
+
+    <string name="Bangladesh2_txt">
+         Bangladesh, to the east of India on the Bay of Bengal, \n/n/n
+        is a South Asian country marked by lush greenery and many waterways./n/n
+        Its Padma (Ganges), Meghna and Jamuna rivers create fertile plains,\n
+        and travel by boat is common. On the southern coast,\n
+        is home to the royal Bengal tiger. ― Google\n
+        Capital: Dhaka\n
+        Dialing code: +880\n
+        Population: 169.4 million (2021) World Bank\n
+        Currency: Bangladeshi Taka\n
+        Prime minister: Sheikh Hasina\n
+        Official language: Bengali\n
+
+    </string>
+    <string name="Bangladesh3_txt">
+        India, officially the Republic of India, is a country in South Asia.
+        It is the seventh-largest country by area, the second-most populous country,
+        and the most populous democracy in the world. Wikipedia
+        Capital: New Delhi
+        Population: 1.408 billion (2021) World Bank
+        Prime minister: Narendra Modi
+        GDP growth rate: 8.7% annual change (2021) World Bank
+        Gross domestic product: 3.176 trillion USD (2021) World Bank
+        Official languages: Hindi, English
+
+    </string>
+</resources>
+
+
