@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/gradind"
+    android:layout_height="match_parent">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="70dp"
+      android:layout_marginBottom="10dp"
+      android:layout_marginTop="15dp"
+        android:weightSum="4"
+      >
+      <ImageView
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:layout_height="70dp"
+          android:src="@drawable/oishee"
+           android:id="@+id/imageviewsample"
+          />
+
+          <LinearLayout
+
+              android:layout_weight="3"
+              android:layout_width="0dp"
+              android:orientation="vertical"
+              android:layout_height="match_parent" >
+              <TextView
+                  android:id="@+id/college_nameIdsample"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_horizontal"
+                  android:layout_marginTop="10dp"
+                  android:textSize="20sp"
+                  android:textAppearance="?android:attr/textAppearanceLarge"
+                  android:textColor="#673AB7"
+                  android:textStyle="italic"
+                  android:text="TOTAO 41"
+                  />
+
+              <TextView
+                  android:id="@+id/college_descriptionIdsample"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginLeft="20dp"
+                  android:gravity="center_horizontal"
+                  android:text="Click here details information"
+                  android:textStyle="italic"
+                  android:textAppearance="?android:attr/textAppearanceSmall"
+                  android:textSize="20sp"
+                  android:textColor="#9C27B0"
+
+                  />
+
+
+
+
+
+
+          </LinearLayout>
+
+
+
+
+  </LinearLayout>
+
+
+
+
+
+
+       </LinearLayout>
+
+
+
+

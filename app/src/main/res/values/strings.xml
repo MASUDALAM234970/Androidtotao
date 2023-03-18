@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">CSE41</string>
+
+    <string-array name="Classmate_name">
+
+        <item>Polok CSE 01        </item>
+        <item> Hasib CSE 02       </item>
+        <item>Yamin CSE 03        </item>
+        <item> Roman CSE 04       </item>
+        <item> Fariya CES 05      </item>
+        <item>  Galib CES 06      </item>
+        <item> Shormi CES 07      </item>
+        <item> Shipon CES 08      </item>
+        <item>Humayun CES 09       </item>
+        <item>  Saiful CSE 10      </item>
+        <item>Mayez CES 11         </item>
+        <item> Lotif CES 12        </item>
+        <item> Nourin CES 13       </item>
+        <item> Koushik CES 14      </item>
+        <item> Asif   CES 15       </item>
+        <item> Mitrika CES 16      </item>
+        <item> Sojol  CES  17      </item>
+        <item> mridul  CES  18      </item>
+        <item>   Habib CES 19      </item>
+        <item>  Oishee  CES 20     </item>
+        <item>  Mohasin CES 21     </item>
+        <item>  Sara CES 25        </item>
+        <item>  Alomgir CES 26     </item>
+        <item>   Rayan CES 27      </item>
+        <item>   Nahim CES 28      </item>
+        <item>   Min CSE 30         </item>
+        <item>   Avijit CES 29     </item>
+        <item>   Sadiya CES 32     </item>
+        <item>   Tanvir CES 35     </item>
+        <item>   Fahad CES 36      </item>
+        <item>    Niloy CES 37     </item>
+        <item>  Imran   CSE 39     </item>
+        <item>   Arnika CSE 40     </item>
+        <item>   MD.MASUD ALAM CSE 41  </item>
+        <item>    Sinthiya  CSE 42  </item>
+        <item>      Alvi   CSE 43   </item>
+        <item>    Saimun CSE 44      </item>
+        <item>    Munna CSE 45       </item>
+
+
+    </string-array>
+</resources>
