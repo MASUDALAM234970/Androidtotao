@@ -98,8 +98,12 @@ public class CustomAdaptor  extends BaseAdapter {
          }
      });
        
+       //////////////////////fulscrean code/////////////////////
        
-       
+        requestWindowFeature(Window.FEATURE_ACTION_BAR);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.SOFT_INPUT_MASK_ADJUST);
        
 
 
