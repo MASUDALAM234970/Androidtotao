@@ -69,3 +69,42 @@ public class CustomAdaptor  extends BaseAdapter {
 
     }
 }
+         ////////////////////////////SearchView///////////////////
+                    
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchviewId369"
+        android:queryHint="Search a Student name"
+        >
+
+    </SearchView>
+       
+       
+       
+       
+       
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+         @Override
+         public boolean onQueryTextSubmit(String s) {
+
+             return false;
+         }
+
+         @Override
+         public boolean onQueryTextChange(String s) {
+             adapter.getFilter().filter(s);
+             return false;
+         }
+     });
+       
+       
+       
+       
+
+
+
+
+
+
+
