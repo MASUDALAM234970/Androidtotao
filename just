@@ -148,8 +148,47 @@ public class CustomAdaptor  extends BaseAdapter {
             mediaPlayer= MediaPlayer.create(this,R.raw.taravati);
     
             /* 
-                       
+                //////////////////////////MenuinFlater/////////////////       
+
+  <item
+
+        android:title="Share"
+        android:id="@+id/share"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_share"
+        />
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.menu,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+      if (item.getItemId()==R.id.share)
+
+      {
+          Intent intent=new Intent(Intent.ACTION_SEND);
+
+          intent.setType("text/tpye");
+          String subject =" C programing app";
+          String body= "this help is very useful to learn c programing . com.error41.myapplication;";
+
+          intent.putExtra(Intent.EXTRA_SUBJECT,subject);
+          intent.putExtra(Intent.EXTRA_TEXT,body);
+
+          startActivity(Intent.createChooser(intent,"Share with"));
 
 
 
+      }
+        return super.onOptionsItemSelected(item);
+    }
 
