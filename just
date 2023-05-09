@@ -1,11 +1,4 @@
- /* // remove the tile bar bar
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        // remove the notification bar
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                       WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                       
-                       */
 
 
          student_name = getResources().getStringArray(R.array.hi);
@@ -99,15 +92,63 @@ public class CustomAdaptor  extends BaseAdapter {
      });
        
        //////////////////////fulscrean code/////////////////////
-       
-        requestWindowFeature(Window.FEATURE_ACTION_BAR);
+     /* // remove the tile bar bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        // remove the notification bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.SOFT_INPUT_MASK_ADJUST);
-       
+                       WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                       
+                       */
+
+                 /////////////////////MediaPlayers////////////////////////////
+
+    @Override
+    protected void onDestroy() {
+
+        if (   mediaPlayer!=null   &&   mediaPlayer.isPlaying())
+
+        {
+
+            mediaPlayer.stop();
+            mediaPlayer.release();
+
+            mediaPlayer=null;
+        }
+
+        super.onDestroy();
+    }
+    
+    
+     if (view.getId()==R.id.musicButtonplayId)
+        {
+           if (mediaPlayer!=null)
+           {
+
+               mediaPlayer.start();
+               Toast.makeText(getApplicationContext(),"Song played",Toast.LENGTH_LONG).show();
+           }
 
 
+            }
 
+
+        if (view.getId()==R.id.musicButtonpauseId)
+        {
+            if (mediaPlayer!=null)
+            {
+
+                mediaPlayer.pause();
+                Toast.makeText(getApplicationContext(),"Song pause",Toast.LENGTH_LONG).show();
+            }
+
+
+        }
+        
+            mediaPlayer= MediaPlayer.create(this,R.raw.taravati);
+    
+            /* 
+                       
 
 
 
