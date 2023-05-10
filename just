@@ -192,3 +192,23 @@ public class CustomAdaptor  extends BaseAdapter {
         return super.onOptionsItemSelected(item);
     }
 
+
+
+     /////////////////Autocompletetextview///////////////////
+     
+     
+     
+        autoCompleteTextView=findViewById(R.id.autoCompleteId159);
+        String [] student_name=getResources().getStringArray(R.array.hi);
+
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,student_name);
+        autoCompleteTextView.setThreshold(1);
+        autoCompleteTextView.setAdapter(adapter);
+
+   /////////////////Autocompletetextview///////////////////
+
+
+
+
+
+
