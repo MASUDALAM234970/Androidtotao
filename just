@@ -238,3 +238,45 @@ public class CustomAdaptor  extends BaseAdapter {
 
      document.add(list);
      
+     
+      ////////////////////////////itext7 Image topic added /////////////////
+      Drawable d= getDrawable(R.drawable.justwow);
+
+      Bitmap bitmap= ((BitmapDrawable)d).getBitmap();
+      ByteArrayOutputStream stream= new ByteArrayOutputStream();
+      bitmap .compress(Bitmap.CompressFormat.PNG,100,stream);
+
+      byte [] bitmapData= stream.toByteArray();
+
+      ImageData imageData= ImageDataFactory.create(bitmapData);
+      Image image = new Image(imageData);
+
+      image.setHeight(100);
+      image.setWidth(100);
+      document.add(image);
+      
+        ////////////////////////////itext7 Table topic added /////////////////
+  Border border= new GrooveBorder(2);
+      float columWith [] ={200f,200f};
+      Table table= new Table(columWith);
+      table.addCell("Name");
+      table.addCell("Age");
+
+      table.addCell(new Cell().setBackgroundColor(Color.GREEN).add(new Paragraph("MASUD ALAM ")));
+      table.addCell(new Cell().setBackgroundColor(Color.GREEN).add(new Paragraph("22")));
+
+      table.addCell(new Cell().setBackgroundColor(Color.BLUE).add(new Paragraph("MASUD ALAM ")));
+      table.addCell(new Cell().setBackgroundColor(Color.BLUE).add(new Paragraph("22")));
+
+      table.addCell(new Cell().setBackgroundColor(Color.YELLOW).add(new Paragraph("MASUD ALAM ")));
+      table.addCell(new Cell().setBackgroundColor(Color.YELLOW).add(new Paragraph("22")));
+      table.addCell("Monika");
+      table.addCell("22");
+
+      table.addCell("Oishee");
+      table.addCell("22");
+
+      table.addCell("Soytan1");
+      table.addCell("22");
+      document.setBorder(border);
+      document.add(table);
