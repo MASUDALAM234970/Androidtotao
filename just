@@ -207,8 +207,22 @@ public class CustomAdaptor  extends BaseAdapter {
 
    /////////////////Autocompletetextview///////////////////
 
+////////////////////////////itext7 paragraph topic added /////////////////
 
 
 
+      Paragraph paragraph= new Paragraph(" helo i am masud alam");
 
+      Text text= new Text("Bold").setBold();
+      Text text1= new Text("Bold").setItalic();
+      Text text2= new Text("Bold").setUnderline();
 
+      Paragraph paragraph1= new Paragraph();
+      paragraph1.add(text);
+      paragraph1.add(text1);
+      paragraph1.add(text2);
+
+      document.add(paragraph);
+      document.add(paragraph1);
+
+////////////////////////////itext7 paragraph topic added /////////////////
