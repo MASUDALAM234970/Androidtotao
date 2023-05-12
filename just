@@ -225,4 +225,16 @@ public class CustomAdaptor  extends BaseAdapter {
       document.add(paragraph);
       document.add(paragraph1);
 
-////////////////////////////itext7 paragraph topic added /////////////////
+////////////////////////////itext7 List topic added /////////////////
+
+      List list= new List();
+
+      list.add("masud");
+      list.add("Alam");
+      list.add("Alam");
+      list.add("Sara");
+      list.add("Oishee");
+      list.add("Monika");
+
+     document.add(list);
+     
