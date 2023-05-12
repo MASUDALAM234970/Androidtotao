@@ -280,3 +280,15 @@ public class CustomAdaptor  extends BaseAdapter {
       table.addCell("22");
       document.setBorder(border);
       document.add(table);
+            ////////////////////////////itext7 QRCode Generator topic added /////////////////
+       BarcodeQRCode qrCode= new BarcodeQRCode(" Hello masud alam");
+      PdfFormXObject barcodeObject =qrCode.createFormXObject(Color.BLACK,pdfDocument);
+
+      Image barcodeImage = new Image(barcodeObject).setWidth(100f).setHeight(100f);
+
+      document.add(barcodeImage);
+      
+      
+      
+      
+      
