@@ -228,7 +228,7 @@ public class CustomAdaptor  extends BaseAdapter {
 ////////////////////////////itext7 List topic added /////////////////
 
       List list= new List();
-
+      list.setListSymbol("$");
       list.add("masud");
       list.add("Alam");
       list.add("Alam");
